@@ -15,13 +15,12 @@ function App() {
 
 
         <Route path="/" element={<Home />} />
-
         <Route path="/dashboard" element={<Dashboard />} >
-          <Route path="students" element={<StudentList />} />
-            <Route path="studentprofile" element={<StudentProfile />} />
+        <Route path="students" element={<StudentList />} />
+          <Route path="studentprofile" element={<StudentProfile />} />
             
        
-        </Route>
+       
 
 
 
