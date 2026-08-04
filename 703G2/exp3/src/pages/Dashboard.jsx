@@ -1,10 +1,12 @@
 import React from 'react'
-import {Link} from 'react-router'
+import {Link, Outlet} from 'react-router'
 function Dashboard() {
   return (
     <div>
+      
       Dashboard
-    <Link to="/studentlist" >View Students</Link>
+      <Link to="studentlist" >View Students</Link>
+      <Outlet />
     </div>
   )
 }
