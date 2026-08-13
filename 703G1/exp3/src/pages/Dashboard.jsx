@@ -116,6 +116,12 @@ function Dashboard() {
       <div className="dashboard">
         
         <h1 className="title">📊 Student Dashboard</h1>
+        
+        <button onClick={() => {
+          localStorage.removeItem("isLoggedIn")
+          window.location.href="/home"
+        }}>Logout</button>
+
         <p className="subtitle">Manage students and monitor statistics.</p>
 
         <div className="cards">

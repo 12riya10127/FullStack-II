@@ -20,6 +20,8 @@ function App() {
           <ProtectedRoute>
             <Dashboard />
           </ProtectedRoute>
+
+       
          
         } >
         <Route path="students" element={<StudentList />} />
