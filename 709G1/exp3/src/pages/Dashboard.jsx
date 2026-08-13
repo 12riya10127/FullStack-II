@@ -15,6 +15,10 @@ function Dashboard() {
     student => student.status === "Graduated"
   ).length;
 
+  function handleLogout(){
+    localStorage.removeItem("isLoggedIn")
+    window.location.href="/home"
+  }
   return (
     <>
       <style>{`
@@ -168,6 +172,7 @@ function Dashboard() {
             <h1 className="dashboard-title">
               Dashboard
             </h1>
+            <button onClick={handleLogout}>Logout</button>
 
             <p className="dashboard-subtitle">
               Manage and view student information
