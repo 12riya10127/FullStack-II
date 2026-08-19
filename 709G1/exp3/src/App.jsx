@@ -7,7 +7,29 @@ import Login from './pages/Login'
 import StudentList from './pages/StudentList'
 import StudentProfile from './pages/StudentProfile'
 import ProtectedRoutes from './components/ProtectedRoutes'
+import AddStudent from './pages/AddStudent'
+import initialdata from './data/student'
+import { useState } from 'react'
 function App() {
+  const [students, setStudents] = useState(initialdata)
+
+
+  function addStudent(formdata) {
+    setStudents((previous) => [
+      ...previous,
+      {
+        id: students.length + 1,
+        ...formdata
+      }
+
+    ])
+    
+  }
+  
+  function deleteStudents() {
+  
+}
+
   return (
     <>
       <NavBar />
@@ -17,14 +39,16 @@ function App() {
 
         <Route path="/dashboard" element={
           <ProtectedRoutes>
-            <Dashboard />
+            <Dashboard students={students} />
           </ProtectedRoutes>
 
         } >
 
 
-          <Route path='studentlist' element={<StudentList />} />
-          <Route path="profile/:id" element={<StudentProfile />} />
+          <Route path='studentlist' element={<StudentList students={students} />} />
+          <Route path="profile/:id" element={<StudentProfile students={ students} />} />
+          <Route path='addstudent' element={<AddStudent addStudent={addStudent} />} />
+          
         </Route>
 
         /* 1./dashboard

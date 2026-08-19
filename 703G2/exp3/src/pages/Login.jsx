@@ -20,6 +20,7 @@ function Login() {
     if (formData.email === "admin@gmail.com" && formData.password === "admin123") {
       setIsLoggedIn(true);
       localStorage.setItem("isLoggedIn", "true");
+      window.location.href="/dashboard"
     }
   }
 

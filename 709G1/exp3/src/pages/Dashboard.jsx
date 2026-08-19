@@ -1,8 +1,8 @@
 import React from 'react';
-import students from '../data/student';
+
 import { Link, Outlet } from 'react-router';
 
-function Dashboard() {
+function Dashboard({students}) {
   const activeStudents = students.filter(
     student => student.status === "Active"
   ).length;
@@ -234,6 +234,15 @@ function Dashboard() {
             <p className="card-description">
               View the complete list of students and their profiles.
             </p>
+
+            
+            <Link
+              className="student-link"
+              to="addstudent"
+             >
+              👨‍🎓 Add Student +
+            </Link>
+
 
             <Link
               className="student-link"
